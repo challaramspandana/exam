@@ -11,7 +11,7 @@ pipeline{
             steps{
                 echo 'Running Docker Application'
                 bat 'docker rm -f mycontainer || exit 0'
-                bat 'docker run -d -p 5000:5000 --name mycontainer mypythonImage'
+                bat 'docker run -d -p 5000:5000 --name mycontainer mypythonimage'
             }
         }
     }
