@@ -4,7 +4,7 @@ pipeline{
         stage('Build'){
             steps{
                 echo 'Building Docker Application'
-                bat 'docker build -t mypythonImage .'
+                bat 'docker build -t mypythonimage .'
             }
         }
         stage('Run'){
