@@ -1,14 +1,16 @@
-from flask import Flask,render_template,request
+from flask import Flask,request,render_template
 app=Flask(__name__)
 @app.route('/')
 def index():
-    return render_template('register.html')
+    return render_template("register.html")
+
 @app.route('/register',methods=['POST'])
 def register():
     name=request.form['name']
+    student_id=request.form['student_id']
     email=request.form['email']
-    password=request.form['password']
-    return render_template("success.html", name=name, email=email, password=password)
+    year=request.form['year']
+    return render_template("sucess.html",name=name,email=email,year=year)
 
-if __name__=="__main__":            
-    app.run(host='0.0.0.0', port=5000, debug=True)
+if __name__=="__main__":
+    app.run(host='0.0.0.0',port=5000,debug=True)
